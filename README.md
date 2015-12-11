@@ -1,8 +1,11 @@
 # GorillaZ
 ## Team members:
 Bruno
+
 Chris
+
 Courtney
+
 Will
 
 ## MVP Description:
