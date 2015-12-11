@@ -1,11 +1,11 @@
 # show each individual question
 get '/questions/:id' do
-  question = Question.find(params[:id] + 1)
+  question = Question.find(params[:id]).next
   survey = TakenSurvey.find(params[:survey_id])
   if defined?(question)
     erb :'/questions/show', locals: {question: question, survey: survey}
   else
-    erb :'/stats'
+    erb :'/answers'
   end
 end
 
@@ -13,7 +13,8 @@ end
 post '/questions' do
   answer = Answer.new(params)
   if answer.save
-    redirect '/questions/<%= params[:question.id] %> + 1'
+    # question id is static here so no way of adding a method to the model. It will need to be manually incremented (+1) here or in the view
+    redirect '/questions/<%= params[:question.id] %>'
   else
     error = answer.errors.full_messages
     erb :'/questions/show', locals: {answer: answer}
