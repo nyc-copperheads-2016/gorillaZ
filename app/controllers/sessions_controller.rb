@@ -10,8 +10,9 @@ end
 post '/sessions' do
   user = User.find_by(username: params[:username])
   if user && user.password == params[:password]
+  if @user.save
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/surveys/index'
   else
     redirect '/?errors=incorrect_username_or_password'
   end
