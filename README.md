@@ -6,22 +6,23 @@ A brief description of your team dynamic and git workflow.
 
 # GorillaZ
 ## Team members:
-### Bruno
-### Chris
-### Courtney
-### Will
+Bruno
+Chris
+Courtney
+Will
 
 ## MVP Description:
-### TO BE UPDATED
+TO BE UPDATED
 
 ## Trello:
-##### TO BE UPDATED
+TO BE UPDATED
 
 ## Wireframes:
-##### TO BE UPDATED
+TO BE UPDATED
 
 ## Team Dynamics
-### TO BE UPDATED
-### Resources
-#####Amazing resource to get us started on forms
+TO BE UPDATED
+
+## Resources
+#####Amazing resources to get us started on forms
 http://blog.learntoprogram.tv/creating-a-survey-form-in-html/
