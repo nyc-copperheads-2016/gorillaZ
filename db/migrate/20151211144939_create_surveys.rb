@@ -3,7 +3,7 @@ class CreateSurveys < ActiveRecord::Migration
     create_table :surveys do |t|
       t.string :name, null: false
       t.timestamps null: false
-      t.references :user
+      t.references :user  #may need to remove or change
     end
   end
 end

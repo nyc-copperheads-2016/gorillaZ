@@ -3,7 +3,7 @@ class CreateAnswers < ActiveRecord::Migration
     create_table  do |t|
       t.timestamps null: false
       t.belongs_to :question, null: false
-      t.belongs_to :choice_id, null: false
+      t.belongs_to :choice, null: false
     end
   end
 end

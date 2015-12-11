@@ -1,14 +1,21 @@
 get '/users/new' do
+  @user = User.new(user: params[:username], password: params[:password_hash])
   erb :'users/new'
 end
 
 post '/users' do
-  user = User.new(params)
-  if user.save
-    redirect '/'
+  @user = User.new(params[:user])
+  if @user.save
+    redirect '/surveys/index' # DOUBLE CHECK THE FORM TO SEE WHAT THE ROUTE IS!
   else
-    redirect'/errors=couldnt_create_login'
+    @errors = "Sorry, Your Request Was Not Processed.  Please Try Again!"
+    erb :'/users/new'
   end
+end
+
+get '/users/:id' do
+  @user = User.find_by(params[:id])
+   erb :'/user/show'
 end
 
 # add route to profile view
