@@ -10,3 +10,5 @@ post '/users' do
     redirect'/errors=couldnt_create_login'
   end
 end
+
+# add route to profile view
