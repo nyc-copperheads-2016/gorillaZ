@@ -15,4 +15,13 @@ validates :password_hash, presence: true, length: {minimum: 6}
     @password = Password.create(new_password)
     self.password_hash = @password
   end
+
+  def self.user_taken_surveys
+    self.taken_surveys.all
+  end
+
+
+  def self.user_created_surveys
+    self.surveys.all
+  end
 end
