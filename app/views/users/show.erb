@@ -3,7 +3,7 @@
   <p> Click for stats </p>
     <% @user_taken_surveys.each do |survey| %>
     <ol>
-      <li><a href="/taken_survey/:<%=taken_survey.id%>/answers"><%= survey.name %></a></li>
+      <li><a href="/taken_survey/:<%=taken_survey.id%>/answers"><%= survey.name %>  </a></li>
     <!-- need to figure out appropriate logic to get survey name -->
     </ol>
     <% end %>
