@@ -14,7 +14,8 @@ end
 
 get '/users/:id' do
   @user = User.find_by(params[:id])
+  @user_taken_surveys = method
+  @user_created_surveys = method
   erb :'/user/show'
 end
 
-# add route to profile view
