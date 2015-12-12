@@ -1,6 +1,6 @@
 class CreateQuestions < ActiveRecord::Migration
   def change
-    create_table  do |t|
+    create_table :questions do |t|
       t.string :description
       t.belongs_to :survey, null: false
 
