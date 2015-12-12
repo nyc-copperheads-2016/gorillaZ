@@ -17,12 +17,12 @@ validates :password_hash, presence: true, length: {minimum: 6}
     self.password_hash = @password
   end
 
-  def self.user_taken_surveys
-    self.taken_surveys.all
+  def taken_surveys
+    TakenSurvey.where(user_id: self.id)
   end
 
 
-  def self.user_created_surveys
-    self.surveys.all
+  def created_surveys
+    self.surveys
   end
 end

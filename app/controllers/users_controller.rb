@@ -14,9 +14,8 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @user = User.find_by(params[:id])
-  @user_taken_surveys = user_taken_surveys
-  @user_created_surveys = user_created_surveys
-  erb :'/user/show'
+  @user = current_user
+  @user_taken_surveys = @user.taken_surveys
+  @user_created_surveys = @user.created_surveys
+  erb :'/users/show'
 end
-
