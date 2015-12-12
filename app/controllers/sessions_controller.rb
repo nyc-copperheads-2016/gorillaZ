@@ -1,5 +1,5 @@
 get '/sessions/new' do
-erb :'sessions/new'
+  erb :'sessions/new'
 end
 
 delete '/sessions' do
@@ -10,7 +10,6 @@ end
 post '/sessions' do
   user = User.find_by(username: params[:username])
   if user && user.password == params[:password]
-  if @user.save
     session[:user_id] = user.id
     redirect '/surveys/index'
   else

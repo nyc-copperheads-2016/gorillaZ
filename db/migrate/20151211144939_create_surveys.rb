@@ -2,8 +2,9 @@ class CreateSurveys < ActiveRecord::Migration
   def change
     create_table :surveys do |t|
       t.string :name, null: false
+      t.references :creator, null: false
+
       t.timestamps null: false
-      t.references :user  #may need to remove or change
     end
   end
 end

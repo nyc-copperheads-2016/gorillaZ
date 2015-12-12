@@ -2,7 +2,8 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :surveys, :taken_surveys
+  has_many :surveys, foreign_key: :creator_id
+  has_many :taken_surveys
 
 validates :username, presence:true, uniqueness: true
 validates :password_hash, presence: true, length: {minimum: 6}
