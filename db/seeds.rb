@@ -1,10 +1,4 @@
 user1 = User.create(username: "bruno", password: "nation")
-# user2 = User.create([
-# {username: "chris", password: "savage"}
-#   ])
-# user3 = User.create([
-# {username: "courtney", password: "aquarius"}
-#   ])
 
 survey1 = user1.surveys.create(name: "america")
 taken_survey1=  user1.taken_surveys.create(survey_id: survey1.id)
@@ -31,17 +25,18 @@ question3.choices.create(answer: "neverland ranch")
 taken_survey1.answers.create( question_id:1 , choice_id:1 )
 taken_survey1.answers.create( question_id:2 , choice_id:1 )
 taken_survey1.answers.create( question_id:3 , choice_id:1 )
-# survey2 = Survey.create([
-# {name: "states", creator_id:2 }
-#   ])
-# survey2 = Survey.create([
-# {name: "", creator_id:3 }
-#   ])
 
-# taken_survey2 = Taken_Survey.create([
-# {survey_id:2  ,user_id:2 }
-#   ])
-# taken_survey2 = Taken_Survey.create([
-# {survey_id:3  ,user_id:3 }
-#   ])
+
+# courtney = User.create([{username: "Courtney", password: "123456789"}])
+
+# freetime_survey = courtney << Survey.new({name: "What Do You Like To Do In Your Free Time?"})
+
+# freetime_survey << Question.new({description: "Do You Like To Travel?", answer: "Yes", answer: "No", answer: "Unsure"})
+
+# freetime_survey << Question.new({description: "Do You Like To Socialize?"})answer: "Yes", answer: "No", answer: "Unsure"})
+# freetime_survey << Question.new({description: "Do You Like To Relax And Rest?", answer: "Yes", answer: "No", answer: "Unsure"})
+# freetime_survey << Question.new({description: "Do You Like To Eat?", answer: "Yes", answer: "No", answer: "Unsure"})
+# freetime_survey << Question.new({description: "Do You Have Many Friends?", answer: "Yes", answer: "No", answer: "Unsure"})
+# freetime_survey.save
+
 
