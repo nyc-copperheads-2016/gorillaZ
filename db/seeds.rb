@@ -12,7 +12,6 @@ survey1 = Survey.create([
 {name: "america", creator_id:1 }
   ])
 
-
 survey1.questions.create([
 {description: "whats the name of our president", survey_id:1 }
   ])
