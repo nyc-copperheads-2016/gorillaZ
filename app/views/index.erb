@@ -5,17 +5,3 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="index-survey-list center col-12">
-    <h1 class="index-survey-list-header primary-color">Check out One of Our Surveys</h1>
-
-    <% surveys = Survey.all %>
-    <% surveys.each do |survey| %>
-      <div class="survey-div col-4">
-        <%= survey.name %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-

@@ -1,3 +1,8 @@
+get '/surveys' do
+  surveys = Survey.all
+  erb :'/surveys/show', locals:{ surveys: surveys}
+end
+
 get '/surveys/new' do
   erb :'/surveys/new'
 end
