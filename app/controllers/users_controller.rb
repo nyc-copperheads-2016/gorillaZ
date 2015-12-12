@@ -3,9 +3,10 @@ get '/users/new' do
 end
 
 post '/users' do
-  user = User.new(params[:user])
+  user = User.new(params)
   if user.save
-    redirect '/surveys/index' # DOUBLE CHECK THE FORM TO SEE WHAT THE ROUTE IS!
+    session[:user_id] = user.id
+    redirect '/surveys' # DOUBLE CHECK THE FORM TO SEE WHAT THE ROUTE IS!
   else
     @errors = "Sorry, Your Request Was Not Processed.  Please Try Again!"
     erb :'/users/new'

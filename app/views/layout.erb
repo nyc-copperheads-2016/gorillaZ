@@ -30,11 +30,15 @@
 
             <div class="right login col-5 col-offset-3">
               <% if logged_in? %>
-                <a href="/users/show">Welcome <%= current_user.username %></a>
-                <form method="post" action="/sessions">
-                  <input type="hidden" name="_method" value="delete" />
-                  <input class="button" type="submit" value="Logout" />
-                </form>
+                <div class="col-10">
+                  <a href="/users/show">Welcome <%=current_user.username%></a>
+                </div>
+                <div class="col-2">
+                  <form method="post" action="/sessions">
+                    <input type="hidden" name="_method" value="delete" />
+                    <input class="button" type="submit" value="Logout" />
+                  </form>
+                </div>
               <% else %>
                 <a class="link" href="/sessions/new">Login</a>
                 <a class="link" href="/users/new">Create Account</a>

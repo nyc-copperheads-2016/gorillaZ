@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="center col-12">
+    <%= question.description %>
+      <form action='/answers' method='post' >
+        <input type="hidden" name="taken_survey_id" value="<%= taken_survey.id %>" />
+        <input type="hidden" name="question_id" value="<%= question.id %>" />
+        <% question.choices.each do |choice| %>
+          <input type="radio" name="choice_id" value="<%=choice.answer%>" /> <%=choice.answer %>
+        <% end %>
+        <input type="submit" value="Submit" />
+      </form>
+  </div>
+</div>
+
