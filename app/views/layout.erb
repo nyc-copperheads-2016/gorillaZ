@@ -1,25 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+  <html lang="en">
+    <head>
+      <!--
+        normalize.css removes cross-browser differences in defaults, e.g.,
+        differences in how form elements appear between Firefox and IE
+        See: http://necolas.github.com/normalize.css/
+      -->
+      <link rel="stylesheet" href="/css/normalize.css">
+      <!--
+        application.css is where you put your styles
+      -->
+      <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="/js/application.js"></script>
+      <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="/js/application.js"></script>
 
-  <title></title>
-</head>
-<body>
-<div id="content">
-  <%= yield %>
-</div>
-</body>
-</html>
+      <title></title>
+    </head>
+    <body>
+      <div class="row">
+        <div class="header col-12">
+          <div class="col-10 col-offset-1">
+            <div class="no-margin no-padding logo-div col-1">
+              <img class="logo" src="imgs/gorillaz.png" />
+            </div>
+            <div class="no-margin no-padding col-3">
+              <a class="link primary-color" href="/"><h1 class="title no-margin">GorillaZSurvey</h1></a>
+            </div>
+
+            <div class="right login col-5 col-offset-3">
+              <% if logged_in? %>
+                <a href="/users/show">Welcome <%= current_user.username %></a>
+                <form method="post" action="/sessions">
+                  <input type="hidden" name="_method" value="delete" />
+                  <input class="button" type="submit" value="Logout" />
+                </form>
+              <% else %>
+                <a class="link" href="/sessions/new">Login</a>
+                <a class="link" href="/users/new">Create Account</a>
+              <% end%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-10 col-offset-1">
+        <%= yield %>
+      </div>
+    </body>
+  </html>
