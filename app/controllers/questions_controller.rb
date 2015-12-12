@@ -2,9 +2,8 @@
 get '/taken_surveys/:id/questions/:question_id' do
   taken_survey = TakenSurvey.find(params[:id])
   survey = Survey.find(taken_survey.survey_id)
-  question = survey.questions.find(params[:question_id])
-
-  if defined?(question)
+  if survey.questions.exists?(params[:question_id])
+    question = survey.questions.find(params[:question_id])
     erb :'/questions/show', locals: {question: question, taken_survey: taken_survey, survey: survey}
   else
     erb :'answers/show', locals: {survey: survey}
