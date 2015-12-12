@@ -14,8 +14,8 @@ end
 
 get '/users/:id' do
   @user = User.find_by(params[:id])
-  @user_taken_surveys = method
-  @user_created_surveys = method
+  @user_taken_surveys = user_taken_surveys
+  @user_created_surveys = user_created_surveys
   erb :'/user/show'
 end
 
