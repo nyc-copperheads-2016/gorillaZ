@@ -1,17 +1,18 @@
 <div class="row">
-  <div class="col-10 col-offset-1 center">
+  <div class="col-12 center">
     <h1 class="profile-sub-header"><span class="profile-header">Hi! <%=@user.username%></span> here are the surveys that you have completed:</h1>
-      <% @user_taken_surveys.each do |survey| %>
-        <div class="taken-survey center col-1">
-          <a href="/taken_survey/:<%=survey.id%>/answers"><%= survey.survey_name %>  </a></li>
+      <% @user_taken_surveys.each do |taken_survey| %>
+        <div class="taken-survey center col-4">
+          <a class="link" href="/taken_surveys/<%=taken_survey.id%>/answers"><%= taken_survey.survey_name %>  </a></li>
         </div>
       <% end %>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-2 col-offset-5 center">
-    <a class="link" href="/surveys"><h1 class="call-to-action">take a Survey</h1></a>
+  <div class="col-4 col-offset-2 center">
+    <a class="link" href="/surveys"><h1 class="call-to-action">Take a Survey</h1></a>
   </div>
-</div>
-
+  <div class="col-4 center">
+    <a class="link" href="/surveys/new"><h1 class="call-to-action">Make a Survey</h1></a>
+  </div>
