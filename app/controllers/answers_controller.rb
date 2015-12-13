@@ -7,3 +7,11 @@ post '/answers' do
   else
   end
 end
+
+
+get "/taken_surveys/:id/answers" do
+  @taken_survey = TakenSurvey.find(params[:id])
+  @answers = @taken_survey.answers
+  erb :"/answers/show"
+end
+
