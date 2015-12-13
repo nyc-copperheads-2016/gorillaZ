@@ -30,26 +30,27 @@
 
             <div class="right login col-5 col-offset-3">
               <% if logged_in? %>
-                <div class="col-10">
-                  <a href="/users/show">Welcome <%=current_user.username%></a>
+                <div class="welcome col-10">
+                  Welcome <a href="/users/show"><%=current_user.username%></a>
                 </div>
-                <div class="col-2">
+                <div class="logout col-2">
                   <form method="post" action="/sessions">
                     <input type="hidden" name="_method" value="delete" />
                     <input class="button" type="submit" value="Logout" />
                   </form>
                 </div>
               <% else %>
-                <a class="link" href="/sessions/new">Login</a><br>
-                <a class="link" href="/users/new">Create Account</a>
+                <ul class="no-padding no-list inline">
+                  <li class="nav"><a class="link user-login" href="/sessions/new">Login</a></li>
+                  <li class="nav"><a class="link user-login" href="/users/new">Create Account</a></li>
+                </ul>
               <% end%>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-10 col-offset-1">
-        <%= yield %>
-      </div>
+      <%= yield %>
+
     </body>
   </html>

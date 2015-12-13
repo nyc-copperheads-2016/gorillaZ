@@ -32,13 +32,13 @@ defaults
 
 .button {
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 5%;
   margin: .25rem;
   text-decoration: none;
   font-size: .75em;
   background: #fff;
-  color: #fff;
-  padding: .25rem;
+  padding: .25rem 1rem;
+  width: 100%;
 }
 
 .date {
@@ -60,6 +60,10 @@ defaults
 
 .inline {
   display: inline;
+}
+
+.no-list {
+  list-style: none;
 }
 
 .logo-div {
@@ -93,6 +97,13 @@ defaults
   color: #5b5a4b;
 }
 
+.call-to-action {
+  font-size: 2rem;
+  font-weight: 300;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
 /********************
 login
 ********************/
@@ -125,6 +136,47 @@ jumbotron
   font-weight: 300;
 }
 
+.banner2-header {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 2rem;
+}
+
+.banner2-subheader {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #a9bd38;
+}
+
+.banner-left {
+  background: #d1d1d1;
+  font-weight: 300;
+  font-size: .75rem;
+}
+
+.banner-left-subheader {
+  font-weight: 300;
+}
+
+.banner-right {
+  background: #dcdcdc;
+  font-weight: 300;
+  font-size: .75rem;
+}
+
+.banner-right-subheader {
+  font-weight: 300;
+}
+
+.banner3 {
+  background: #5b5a4b;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.banner3-header {
+  font-weight: 300;
+}
 /********************
 index-survey-list
 ********************/
@@ -137,6 +189,47 @@ index-survey-list
   margin-top: 3rem;
   font-size: 2rem;
 }
+
+/********************
+user-login
+********************/
+.user-login {
+  font-size: 3rem;
+}
+
+.nav {
+  margin: .25rem 0;
+  width: 100%;
+  background: #a9bd38;
+}
+
+/********************
+form
+********************/
+form {
+  font-size: 3rem;
+}
+
+form input {
+  width: 100%;
+}
+
+.form-header {
+  font-size: 3rem;
+}
+/********************
+user profile
+********************/
+.profile-header {
+  font-weight: 300;
+  font-size: 3rem;
+  color: #a9bd38;
+}
+
+.profile-sub-header {
+  font-weight: 300;
+}
+
 /********************
 desktop
 ********************/
@@ -144,7 +237,7 @@ desktop
 
   [class*="col-"] {
   float: left;
-  padding: 15px
+  padding: 15px;
   }
 /*column widths*/
   .col-1 {width: 8.33%}
@@ -195,6 +288,14 @@ desktop
     font-size: 3rem;
   }
 
+  .logout {
+    padding: 0;
+  }
+
+  .welcome {
+    padding: .5rem;
+  }
+
   /********************
   jumbotron
   ********************/
@@ -208,6 +309,33 @@ desktop
     border-right: 1px solid black;
   }
 
+  /********************
+  user-login
+  ********************/
+  .user-login {
+    font-size: 1rem;
+  }
+
+  .nav {
+    margin: .25rem 0;
+    width: 20%;
+    background: none;
+  }
+
+  .login ul li {
+    display: inline;
+  }
+
+  /********************
+  form
+  ********************/
+  form {
+    font-size: 1rem;
+  }
+
+  .form-header {
+    font-size: 1rem;
+  }
 }
 
 

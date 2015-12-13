@@ -1,9 +1,9 @@
-<div class="col-12 center">
-  <h3>New User</h3>
-  <form action = "/users" method = "POST">
-    <p>username: <input type="text" name="username"/> </p>
-    <p>password: <input type="text" name="password"/></p>
-    <p><input type="submit" value="submit"/></p>
+<div class="col-4 col-offset-4 center">
+  <h3 class="form-header">New User</h3>
+  <form action ="/users" method ="POST">
+    <p>Username: <input type="text" name="username"/> </p>
+    <p>Password: <input type="password" name="password"/></p>
+    <p><input class="button" type="submit" value="submit"/></p>
   </form>
   <% if defined?(errors) %>
     <ul>
