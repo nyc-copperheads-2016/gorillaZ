@@ -30,6 +30,7 @@ user2 = User.create(username: "Courtney", password: "nation")
 
 survey2 = user2.surveys.create(name: "What Do You Like To Do In Your Free Time?")
 
+taken_survey2 = user2.taken_surveys.create(survey_id: survey2.id)
 
 question1 = survey2.questions.create(description: "Do You Like To Socialize?")
 question2 = survey2.questions.create(description: "Do You Like To Relax And Rest?")
