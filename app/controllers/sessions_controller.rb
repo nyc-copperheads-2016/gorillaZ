@@ -1,5 +1,9 @@
 get '/sessions/new' do
-  erb :'sessions/new'
+  if request.xhr?
+   erb :'sessions/_ajaxed_new_session_form',layout: !request.xhr?
+  else
+    erb :'/sessions/new'
+  end
 end
 
 delete '/sessions' do
