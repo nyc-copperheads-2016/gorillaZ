@@ -136,6 +136,47 @@ jumbotron
   font-weight: 300;
 }
 
+.banner2-header {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 2rem;
+}
+
+.banner2-subheader {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #a9bd38;
+}
+
+.banner-left {
+  background: #d1d1d1;
+  font-weight: 300;
+  font-size: .75rem;
+}
+
+.banner-left-subheader {
+  font-weight: 300;
+}
+
+.banner-right {
+  background: #dcdcdc;
+  font-weight: 300;
+  font-size: .75rem;
+}
+
+.banner-right-subheader {
+  font-weight: 300;
+}
+
+.banner3 {
+  background: #5b5a4b;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.banner3-header {
+  font-weight: 300;
+}
 /********************
 index-survey-list
 ********************/
@@ -196,7 +237,7 @@ desktop
 
   [class*="col-"] {
   float: left;
-  padding: 15px
+  padding: 15px;
   }
 /*column widths*/
   .col-1 {width: 8.33%}
