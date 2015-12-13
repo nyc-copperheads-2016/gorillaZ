@@ -40,17 +40,31 @@
                   </form>
                 </div>
               <% else %>
+
+             <span>
+              <div id="place_ajaxed_form">
                 <ul class="no-padding no-list inline">
-                  <li class="nav"><a class="link user-login" href="/sessions/new">Login</a></li>
-                  <li class="nav"><a class="link user-login" href="/users/new">Create Account</a></li>
+                  <li class="nav">
+                    <a id="link-user-login" href="/sessions/new">Login</a></li>
+                  </div>
+
+                  <div id="link-to-register">
+                  <ul class="no-padding no-list inline">
+                  <li class="nav"><a id="link-user-register" href="/users/new">Create Account</a></li>
+                </div>
                 </ul>
+              </span>
+
+
               <% end%>
+
             </div>
           </div>
         </div>
       </div>
 
+ <div id="main-content" class="col-8 col-offset-2 center">
       <%= yield %>
-
+ </div>
     </body>
   </html>
