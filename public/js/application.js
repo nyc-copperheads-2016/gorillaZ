@@ -1,7 +1,33 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+$(document).ready(function(){
+ $('#link_login').on('click', function(event){
+   event.preventDefault();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+ $.ajax({
+  method: "GET",
+  url:'/sessions/new',
+  }).done(function(form){
+ $('#place_ajaxed_form').append(form);
+  }).fail(function(form){
+   console.log("This Did Not Work" + form)
+  });
+ });
 });
+
+
+
+
+// $('#link to register').on('click', function(event){
+//    event.preventDefault(event)
+
+//    $.ajax({
+//     method: "GET"
+//     url:
+
+
+
+//    })
+
+//  });
+// });
+
+
