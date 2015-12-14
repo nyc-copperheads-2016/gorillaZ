@@ -3,6 +3,6 @@
   <ul>
     <li class="no-list"><%= Question.find(answer.question_id).description %></li>
     <li class="no-list">Out of <%= possible_choices = Question.find(answer.question_id).choices.count %> Possible responses:</li>
-    <li class="no-list"><%= survey.percentile(answer) %> out of <%= survey.general_statistic(answer) %> chose the same answer </li>
+    <li class="no-list"><%= survey.percentile(answer) %> out of <%= survey.general_statistic(answer) %> survey takers chose the same answer </li>
   </ul>
 <%end%>
