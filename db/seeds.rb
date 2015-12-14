@@ -1,57 +1,60 @@
-user1 = User.create(username: "bruno", password: "nation")
+users = [{username: "Bruno", password: "nation"}, {username: "Courtney", password: "nation"}]
 
-survey1 = user1.surveys.create(name: "america")
-taken_survey1=  user1.taken_surveys.create(survey_id: survey1.id)
+users.each do |user|
+  User.create(user)
+end
 
-question1 = survey1.questions.create(description: "whats the name of our president")
-question2 = survey1.questions.create(description: "how many states are in the US")
-question3 = survey1.questions.create(description: "where does the president live")
+survey1 = Survey.create(name: "america", creator_id: User.find(1).id)
+taken_survey1=  User.find(1).taken_surveys.create(survey_id: survey1.id)
 
-question1.choices.create(answer: "obama")
-question1.choices.create(answer: "clinton")
-question1.choices.create(answer: "bush")
-question1.choices.create(answer: "reagan")
+descriptions = ["whats the name of our president", "how many states are in the US", "where does the president live"]
+question1_choices = ["Obama", "Clinton", "Bush", "Reagan"]
+question2_choices = ["50", "20", "30"]
+question3_choices = ["White House", "Green House", "Light House", "Neverland Ranch"]
 
+descriptions.each do |description|
+  survey1.questions.create(description: description)
+end
 
-question2.choices.create(answer: "50")
-question2.choices.create(answer: "20")
-question2.choices.create(answer: "30")
+question1_choices.each do |choice|
+    survey1.questions.find(1).choices.create(answer: choice)
+end
 
-question3.choices.create(answer: "white house")
-question3.choices.create(answer: "green house")
-question3.choices.create(answer: "light house ")
-question3.choices.create(answer: "neverland ranch")
+question2_choices.each do |choice|
+    survey1.questions.find(2).choices.create(answer: choice)
+end
 
-taken_survey1.answers.create( question_id:1 , choice_id:1 )
-taken_survey1.answers.create( question_id:2 , choice_id:1 )
-taken_survey1.answers.create( question_id:3 , choice_id:1 )
+question3_choices.each do |choice|
+    survey1.questions.find(3).choices.create(answer: choice)
+end
 
-# user2 = User.create(username: "Courtney", password: "nation")
-
-# survey2 = user2.surveys.create(name: "What Do You Like To Do In Your Free Time?")
-
-taken_survey2 = user2.taken_surveys.create(survey_id: survey2.id)
-
-# question1 = survey2.questions.create(description: "Do You Like To Socialize?")
-# question2 = survey2.questions.create(description: "Do You Like To Relax And Rest?")
-# question3 = survey2.questions.create(description: "Do You Like To Eat?")
-
-# question1.choices.create(answer: "Yes")
-# question1.choices.create(answer: "No")
-# question1.choices.create(answer: "Unsure")
+survey1.questions.each do |question|
+  question.choices.each do |choice|
+    taken_survey1.answers.create(question_id: question.id, choice_id: choice.id)
+  end
+end
 
 
-# question2.choices.create(answer: "Yes")
-# question2.choices.create(answer: "No")
-# question2.choices.create(answer: "Unsure")
+survey2 = Survey.create(name: "What Do You Like To Do In Your Free Time?", creator_id: User.find(2).id)
+taken_survey2 = User.find(2).taken_surveys.create(survey_id: survey2.id)
 
+descriptions = ["Do You Like To Socialize?", "Do You Like To Relax And Rest?", "Do You Like To Eat?"]
+choices = ["yes", "no", "unsure"]
 
-# question3.choices.create(answer: "Yes")
-# question3.choices.create(answer: "No")
-# question3.choices.create(answer: "Unsure")
+descriptions.each do |description|
+  survey2.questions.create(description: description)
+end
 
-# taken_survey2.answers.create( question_id:1 , choice_id:1 )
-# taken_survey2.answers.create( question_id:2 , choice_id:1 )
-# taken_survey2.answers.create( question_id:3 , choice_id:1 )
+survey2.questions.each do |question|
+  choices.each do |choice|
+    question.choices.create(answer: choice)
+  end
+end
+
+survey2.questions.each do |question|
+  question.choices.each do |choice|
+    taken_survey2.answers.create(question_id: question.id, choice_id: choice.id)
+  end
+end
 
 
